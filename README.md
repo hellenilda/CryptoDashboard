@@ -15,10 +15,14 @@ Consumo da CoinGecko API com Node.JS
 ---
 
 ## Como utilizar o projeto
+
 ### Instalar as dependências
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
+
 ### Clonar o repositório
+
 ### Configurar o dotenv
+
 ### Executar a aplicação

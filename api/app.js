@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/crypto', async (req, res) => {
     try {
-      const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd`);
+      const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&api_key=${chave_api}`);
       res.send(response.data);
     } catch (error) {
       res.send('Erro ao buscar dados da API');
