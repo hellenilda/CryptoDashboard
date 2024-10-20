@@ -1,25 +1,23 @@
 require('dotenv').config();
 
-const express = require('express')
-const axios = require('axios')
+const express = require('express');
+const { engine } = require('express-handlebars');
 
-const app = express()
-const port = process.env.PORT
-const chave_api = process.env.CHAVE_API
+const app = express();
+const port = process.env.PORT;
+const dashboardRouter = require('./routes/dashboard');
 
-app.get('/', (req, res) => {
-    res.send('Aplicação rodando')
-})
+// Configurando o Handlebars como template engine
+app.engine('handlebars', engine({
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
+app.set('views', `${__dirname}/views`);
 
-app.get('/crypto', async (req, res) => {
-    try {
-      const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&api_key=${chave_api}`);
-      res.send(response.data);
-    } catch (error) {
-      res.send('Erro ao buscar dados da API');
-    }
+// Usando o router para definir rotas da aplicação
+app.use('/', dashboardRouter);
+
+// Iniciando o servidor
+app.listen(port, () => {
+    console.log(`Rodando em http://localhost:${port}/`);
 });
-
-app.listen(port, (req,res) => {
-    console.log(`Rodando em http://localhost:${port}/`)
-})
