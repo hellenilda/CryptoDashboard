@@ -1,0 +1,51 @@
+{{!-- Se houver um erro, exibe uma mensagem de erro --}}
+{{#if error}}
+  <div class="alert alert-danger text-center">
+    {{error}}
+  </div>
+{{/if}}
+
+{{!-- Cabeçalho de boas-vindas --}}
+<div class="container mt-5">
+  <h1 class="text-center">Bem-vindo ao Crypto Dashboard!</h1>
+  <p class="text-center">Acompanhe os preços das principais criptomoedas em tempo real.</p>
+</div>
+
+{{!-- Formulário de pesquisa para buscar criptomoedas --}}
+<div class="container mt-5">
+  <form action="/crypto" method="get">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control" name="crypto" placeholder="Digite o nome da criptomoeda (Ex: bitcoin)" required>
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+{{!-- Exibe os resultados da pesquisa (se houver criptomoeda encontrada) --}}
+{{#if crypto}}
+  <div class="container mt-5">
+    <h2 class="text-center">Resultado da pesquisa</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{crypto.name}} ({{crypto.symbol}})</h5>
+            <p class="card-text">Preço atual: {{crypto.price_usd}} USD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+{{!-- Informações adicionais (sobre a aplicação) --}}
+<div class="container mt-5">
+  <h2 class="text-center">Sobre a aplicação</h2>
+  <p class="text-center">O Crypto Dashboard é uma aplicação simples e intuitiva para acompanhar preços de criptomoedas em tempo real. Utilize a busca acima para consultar o valor atual de criptos como Bitcoin, Ethereum, entre outros, e fique por dentro do mercado de criptos.</p>
+</div>
