@@ -26,6 +26,13 @@ api/
 ├── controllers/
 │   └── dashboardController.js       # Controlador para gerenciar as requisições da API
 │
+├── public/
+│   └── img/
+│   │   └── img-crypto.png
+│   │   └── img-pesquisar.png
+│   └── style/
+│       └── style.css
+│
 ├── routes/
 │   └── dashboard.js                 # Rotas para a aplicação
 │
@@ -36,6 +43,7 @@ api/
 │   │   └── style.css
 │   └── index.handlebars           # Página principal com o formulário de pesquisa
 │   └── favoritos.handlebars
+│   └── crypto.handlebars
 │
 ├── .env                          # Arquivo de variáveis de ambiente (não incluído no repositório)
 ├── app.js                        # Configuração e inicialização do servidor
