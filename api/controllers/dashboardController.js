@@ -7,7 +7,7 @@ exports.index = (req, res) => {
 
 // Controlador para buscar dados da API da CoinGecko
 exports.getCryptoData = async (req, res) => {
-    const crypto = req.query.crypto;
+    const crypto = req.query.crypto;  // O parâmetro vem do query string
 
     if (!crypto) {
         return res.redirect('/?error=Por favor, insira o nome de uma criptomoeda.');
@@ -23,6 +23,7 @@ exports.getCryptoData = async (req, res) => {
 
         // Renderiza o template 'crypto' com os dados da criptomoeda
         res.render('crypto', {
+            title: 'Crypto Dashboard',
             crypto: {
                 name: crypto,
                 price_usd: cryptoData[crypto].usd
