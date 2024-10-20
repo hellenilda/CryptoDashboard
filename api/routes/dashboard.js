@@ -8,4 +8,7 @@ router.get('/', dashboardController.index);
 // Rota para buscar dados de criptomoedas
 router.get('/crypto', dashboardController.getCryptoData);
 
+// Rota para exibir favoritos
+router.get('/favoritos', dashboardController.favorites);
+
 module.exports = router;

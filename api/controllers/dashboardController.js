@@ -37,3 +37,9 @@ exports.getCryptoData = async (req, res) => {
         res.render('index', { error: 'Erro ao buscar dados da API.' });
     }
 };
+
+// Controlador para exibir a página de favoritos
+exports.favorites = (req, res) => {
+    // Aqui não precisa fazer nada com favoritos, pois são carregados no lado do cliente
+    res.render('favoritos');
+};

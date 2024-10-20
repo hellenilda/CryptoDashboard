@@ -32,7 +32,10 @@ api/
 ├── views/
 │   ├── layouts/
 │   │   └── main.handlebars       # Layout principal com o template Handlebars
+│   ├── style/
+│   │   └── style.css
 │   └── index.handlebars           # Página principal com o formulário de pesquisa
+│   └── favoritos.handlebars
 │
 ├── .env                          # Arquivo de variáveis de ambiente (não incluído no repositório)
 ├── app.js                        # Configuração e inicialização do servidor
