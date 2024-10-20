@@ -100,8 +100,8 @@ ul li {
     text-align: center;
     color: #FFFFFF;
 }
-
+/* 
 ul li::before {
     content: "✔ ";
     color: #FF6200;
-}
+} */

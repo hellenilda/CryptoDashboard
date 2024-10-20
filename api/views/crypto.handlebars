@@ -1,0 +1,15 @@
+{{!-- crypto.handlebars --}}
+
+<!-- Exibir erro, caso exista -->
+{{#if error}}
+<div class="alert alert-danger text-center" role="alert">
+    {{error}}
+</div>
+{{/if}}
+
+<!-- Seção para exibir a criptomoeda e seu preço -->
+{{#if crypto}}
+<div class="container text-center mt-5">
+    <h2>{{crypto.name}} - {{crypto.price_usd}} USD</h2>
+</div>
+{{/if}}
