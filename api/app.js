@@ -2,9 +2,10 @@ require('dotenv').config();
 
 const express = require('express');
 const { engine } = require('express-handlebars');
-
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
+
+// Arquivo de rotas da aplicação
 const dashboardRouter = require('./routes/dashboard');
 
 // Configurando o Handlebars como template engine
@@ -17,7 +18,7 @@ app.set('views', `${__dirname}/views`);
 // Usando o router para definir rotas da aplicação
 app.use('/', dashboardRouter);
 
-// Iniciando o servidor
+// Inicializando o servidor
 app.listen(port, () => {
-    console.log(`Rodando em http://localhost:${port}/`);
+    console.log(`Servidor rodando em http://localhost:${port}/`);
 });
