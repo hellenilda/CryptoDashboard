@@ -1,0 +1,25 @@
+{
+  "name": "crypto-dashboard",
+  "version": "1.0.0",
+  "description": " Aplicação Node feita utilizando a CoinGecko API.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellenilda/CryptoDashboard.git"
+  },
+  "keywords": [
+    "node.js",
+    "coingeckoapi",
+    "coingecko",
+    "crypto"
+  ],
+  "author": "Hellenilda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellenilda/CryptoDashboard/issues"
+  },
+  "homepage": "https://github.com/hellenilda/CryptoDashboard#readme"
+}
