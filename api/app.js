@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { engine } = require('express-handlebars');
 const app = express();
@@ -11,6 +12,10 @@ app.engine('handlebars', engine({
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
+
+// Middleware para parsing de dados de formulário
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Middleware para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));

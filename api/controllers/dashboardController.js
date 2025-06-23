@@ -1,10 +1,5 @@
 const axios = require('axios');
 
-// Controlador para exibir a página inicial (index)
-exports.index = (req, res) => {
-    res.render('index');
-};
-
 // Controlador para buscar dados da API da CoinGecko
 exports.getCryptoData = async (req, res) => {
     const crypto = req.query.crypto;  // O parâmetro vem do query string
@@ -14,19 +9,24 @@ exports.getCryptoData = async (req, res) => {
     }
 
     try {
-        const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${crypto}&vs_currencies=usd`);
+        const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${crypto.toLowerCase()}&vs_currencies=usd`);
         const cryptoData = response.data;
 
-        if (!cryptoData[crypto]) {
-            return res.redirect('/?error=Criptomoeda não encontrada.');
+        if (!cryptoData || Object.keys(cryptoData).length === 0) {
+            return res.redirect('/?error=Criptomoeda não encontrada. Verifique o nome e tente novamente.');
+        }
+
+        const cryptoKey = Object.keys(cryptoData)[0];
+        if (!cryptoData[cryptoKey] || !cryptoData[cryptoKey].usd) {
+            return res.redirect('/?error=Dados da criptomoeda não disponíveis.');
         }
 
         // Renderiza o template 'crypto' com os dados da criptomoeda
         res.render('crypto', {
             title: 'Crypto Dashboard',
             crypto: {
-                name: crypto,
-                price_usd: cryptoData[crypto].usd
+                name: cryptoKey,
+                price_usd: cryptoData[cryptoKey].usd
             }
         });
     } catch (error) {
