@@ -1,4 +1,5 @@
 # Crypto Dashboard
+
 Consumo da CoinGecko API com Node.JS
 
 ---
@@ -13,9 +14,26 @@ Consumo da CoinGecko API com Node.JS
 
 ## Tecnologias utilizadas
 
+- **Node.js** - Runtime JavaScript para o servidor
+- **Express.js** - Framework web para Node.js
+- **Handlebars** - Template engine para renderização das páginas
+- **Axios** - Cliente HTTP para consumo da API
+- **Bootstrap** - Framework CSS para estilização
+- **Dotenv** - Gerenciamento de variáveis de ambiente
+- **CoinGecko API** - API para dados de criptomoedas
+- **Nodemon** - Ferramenta para desenvolvimento (auto-restart)
+
 ---
 
 ## Funcionalidades
+
+- **Consulta de preços em tempo real**: Busque o preço atual de qualquer criptomoeda
+- **Interface intuitiva**: Design responsivo com Bootstrap para uma experiência agradável
+- **Pesquisa por nome**: Digite o nome da criptomoeda (ex: bitcoin, ethereum) para obter informações
+- **Exibição de preços em USD**: Visualize os valores em dólares americanos
+- **Tratamento de erros**: Mensagens informativas para criptomoedas não encontradas
+- **Página de favoritos**: Seção dedicada para suas criptomoedas preferidas
+- **Arquitetura MVC**: Organização clara do código seguindo o padrão Model-View-Controller
 
 ---
 
